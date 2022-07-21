@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block section%}
+
+<div class="body_jogosfree">
+    <h4>Quantidades de jogos {{cont}}</h4>
+    <div class="cont-free">
+        {%for jogos in api %}
+        <div class="jogo_free">
+            <div>
+                <h4>{{jogos.title}}</h4>
+            </div>
+            <div>
+                <a href="{% url 'jogo_user' jogos.id %}"><img src="{{jogos.thumbnail}}" alt=""></a>
+            </div>
+            <div class="description-jogo">
+                <span>
+                    <label><a href="{{jogos.freetogame_profile_url}}"> perfil url</a></label>
+                    <label><a href="{{jogos.game_url}}">game url</a></label>
+                </span>
+                <a class="ver_jogo" href="{% url 'jogo_user' jogos.id %}">
+                    <label for="">{{jogos.short_description}}</label>
+                    <span><label for="">{{jogos.genre}}</label><label for="">{{jogos.platform}}</label></span>
+                </a>
+            </div>
+        </div>
+        {%endfor%}
+        <div class="pagination">
+            <span class="step-links">
+                {% if api.has_previous %}
+                    <a href="?page={{ api.previous_page_number }}">Anterior</a>
+                {% endif %}
+        
+                <span class="current">
+                    Página {{ api.number }} de {{ api.paginator.num_pages }}.
+                </span>
+        
+                {% if api.has_next %}
+                    <a href="?page={{ api.next_page_number }}">próxima</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+{%endblock section%}

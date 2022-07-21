@@ -1,0 +1,65 @@
+.body_jogosfree{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 18rem;
+    padding-bottom: 5rem;
+}
+.cont-free{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 93%;
+}
+
+.nav-wrapper > a{
+    margin-left: 4rem;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.nav-wrapper > a >img{
+    width: 80%;
+    height: 80%;
+    align-items: center;
+}
+.jogo_free{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 31%;
+    border: 1px solid black;
+}
+.description-jogo{
+    display: flex;
+    flex-direction: column;
+}
+.jogo_free > div{
+    width: 90%;
+}
+.det-cat,.det-ord,.det-plat{
+    width: 8rem;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+.det-cat>a,.det-ord>a,.det-plat>a{
+    width: 100%;
+    display: flex;
+    background-color: black;
+    color: white;
+    border-bottom: 1px solid white;
+}
+#nav-mobile{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}

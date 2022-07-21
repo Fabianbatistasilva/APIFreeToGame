@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Css Paginas-->
+    <link rel="stylesheet" href="{% static '\css\home.css' %}">
+    <link rel="stylesheet" href="{% static '\css\jogo.css' %}">
+    <!--Css Fim-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="static/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper black">
+                <a href="{% url 'home'  %}" class="brand-logo"><img src="{% static 'img\logo.png' %}" alt=""></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <details class="det-plat">
+                            <summary>Plataformas</summary>
+                            <a href="{% url 'plataforma' 'pc' %}">PC</a>
+                            <a href="{% url 'plataforma' 'browser' %}">Browser</a>
+                            <a href="{% url 'plataforma' 'all' %}">Todos</a>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="det-cat">
+                            <summary>Categorias</summary>
+                            <a href="{% url 'categoria' 'shooter' %}">Tiros</a>
+                            <a href="{% url 'categoria' 'mmorpg' %}">MMORPG</a>
+                            <a href="{% url 'categoria' 'pvp' %}">PVP</a>
+                            <a href="{% url 'categoria' 'strategy' %}">Estratégia</a>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="det-ord">
+                            <summary>Ordenar</summary>
+                            <a href="{% url 'ordenar' 'alphabetical' %}">Alfabético</a>
+                            <a href="{% url 'ordenar' 'release-date' %}">
+                                D.lançamento
+                            </a>
+                            <a href="{% url 'ordenar' 'relevance' %}">
+                                Relevância
+                            </a>
+                            <a href="{% url 'ordenar' 'popularity' %}">
+                                Popularidade
+                            </a>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {%block section%}{%endblock section%}
+    </main>
+    <script type="text/javascript" src="static/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'materialize/js/materialize.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'materialize\js\materialize.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+<script>
+</script>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block section%}
+<div class="body_jogo">
+    <div class="cont_user">
+        <div class="jogo_user">
+            <h3>{{jogo.title}}</h3>
+            <img src="{{jogo.thumbnail}}" alt="">
+            <H6>Descrição</H6>
+            <label for="">{{jogo.description}}</label>
+            <a href="{{jogo.game_url}}">Link do Free to game</a>
+            <label for="">Gênero: {{jogo.genre}}</label>
+            <a href="{{jogo.freetogame_profile_url}}">Link do perfil Freetogame</a>
+            <h6 for="">Configuração minima</h6>
+            <label for="">
+                Processador: {{jogo.minimum_system_requirements.processor}}
+                <hr> 
+                System: {{jogo.minimum_system_requirements.os}}
+                <hr>
+                Memoria ram :{{jogo.minimum_system_requirements.memory}}
+                <hr>
+                Placa de Vídeo: {{jogo.minimum_system_requirements.graphics}}
+                <hr>
+                HD/SDD:{{jogo.minimum_system_requirements.storage}}
+                <hr>
+            </label>
+        </div>
+    </div>
+</div>
+{%endblock section%}
